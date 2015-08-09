@@ -1,10 +1,13 @@
 <h1>Welcome, {{ profile.student.fullName }}</h1>
 <div class="row">
   <div class="col-xs-12 col-md-4 profile-picture">
-    <div class="profile-picture">
-      <img src="images/User-Default.jpg" class="img-responsive"/>
+    <div style="background: url({{ profile.imageSrc }}) center center no-repeat;">
+      <!--<img src="{{ profile.imageSrc }}" class="img-responsive"/>-->
     </div>
-    <a href="" class="text-center change-picture"><span class="glyphicon glyphicon-pencil"></span>Change picture</a>
+    <form>
+      <label for="changePicture" class="change-picture"><span class="glyphicon glyphicon-pencil"></span>Change picture</label>
+      <input type="file" id="changePicture" ng-file-select="onFileSelect($files)" class="hidden">
+    </form>
   </div>
   <div class="col-xs-12 col-md-8">
     <form id="editProfile" name="editProfile" ng-class="{'readonly': profile.isReadonly}" class="form-horizontal" ng-submit="profile.updateProfile()">
