@@ -2,7 +2,9 @@ header {
   .navbar {
     border-radius: 0;
     border: 0;
-    border-bottom: 1px solid $site-border-gray;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
     
     .navbar-brand {
       font-family: 'open_sans_condensedbold';

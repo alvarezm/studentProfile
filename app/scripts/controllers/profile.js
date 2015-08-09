@@ -8,14 +8,32 @@
  * Controller of the studentProfileApp
  */
 angular.module('studentProfileApp')
-  .controller('ProfileCtrl', ['$scope', '$rootScope', 'Student', function ($scope, $rootScope, Student) {
-    var profile = this;
-    var student = $rootScope.student;
-    profile.isEdit = false;
-    //var student = new Student('murielle', 'Murielle Alvarez', 'murielle@test.com', '1234', '');
+  .controller('ProfileCtrl', ['$scope', '$rootScope', '$window', function ($scope, $rootScope, $window) {
+    // check if user has already registered
+    if (!$rootScope.student) {
+      $window.location.href = '#/';
+    }
     
-    $scope.editProfile = function() {
-      profile.isEdit = true;
+    var profile = this;
+    profile.student = $rootScope.student;
+    profile.oldStudent = $rootScope.student;
+    //console.log(profile.oldStudent);
+    profile.isReadonly = true;
+    
+    profile.editProfile = function() {
+      profile.isReadonly = false;
+    };
+    
+    profile.cancelEdit = function() {
+      //console.log(profile.student);
+      //console.log(profile.oldStudent);
+      profile.student = profile.oldStudent;
+      profile.isReadonly = true;
+    };
+    
+    profile.updateProfile = function() {
+      profile.oldStudent = profile.student;
+      profile.isReadonly = true;
     };
     
     $scope.getClass = function() {

@@ -1,4 +1,8 @@
 .student-profile {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  
   h1 {
     padding-bottom: 30px;
     text-align: center;
@@ -9,16 +13,25 @@
   }
   
   .profile-picture {
-    max-width: 250px;
-    margin: 0 auto;
-    border-radius: 50%;
-    border: 5px solid #ccc;
-    overflow: hidden;
+    @media(min-width: $screen-md-min) {
+      border-right: 1px solid #ccc;
+    }
+    
+    > div {
+      max-width: 250px;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 5px solid #ccc;
+      overflow: hidden;
+    }
   }
   
   .change-picture {
     display: block;
     margin: 10px 0 30px 0;
+    @media(min-width: $screen-md-min) {
+      margin-bottom: 0;
+    }
     
     .glyphicon {
       font-size: 16px;
@@ -27,8 +40,13 @@
   }
   
   form {
+    @media(min-width: $screen-md-min) {
+      padding-top: 20px;
+    }
+    
     label {
       width: 50%;
+      padding-top: 7px;
       float: left;
       text-align: right;
       @media(min-width: $screen-md-min) {
@@ -38,9 +56,17 @@
     
     .form-values {
       width: 50%;
+      padding-right: 15px;
       float: left;
       @media(min-width: $screen-md-min) {
         width: 75%;
+      }
+    }
+    
+    .error {
+      margin-left: 50%;
+      @media(min-width: $screen-md-min) {
+        margin-left: 25%;
       }
     }
     
@@ -57,7 +83,9 @@
       .form-group {
         margin-bottom: 5px;
         
-        input {
+        input,
+        input:focus,
+        input:-webkit-autofill {
           background-color: transparent;
           border: 0;
           box-shadow: none;
