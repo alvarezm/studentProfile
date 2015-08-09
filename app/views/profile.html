@@ -6,7 +6,7 @@
     </div>
     <form>
       <label for="changePicture" class="change-picture"><span class="glyphicon glyphicon-pencil"></span>Change picture</label>
-      <input type="file" id="changePicture" ng-file-select="onFileSelect($files)" class="hidden">
+      <input type="file" id="changePicture" spa-file-select="onFileSelect($files)" class="hidden">
     </form>
   </div>
   <div class="col-xs-12 col-md-8">
@@ -41,11 +41,10 @@
         </div>
 			</div>
 			<div ng-hide="profile.isReadonly" class="form-group password">
-        <span ng-show="editProfile.confirmPassword.$error.required && editProfile.confirmPassword.$dirty && profile.student.password.length > 0" class="error">Password does not match.</span>
-        <span ng-show="password != confirmPassword && editProfile.$dirty" class="error">Password does not match.</span>
+        <span ng-show="editProfile.confirmPassword.$error.noMatch" class="error">Password does not match.</span>
 				<label for="confirmPassword" class="col-sm-4 control-label">Confirm Password</label>
         <div class="form-values">
-          <input type="password" id="confirmPassword" name="confirmPassword" ng-model="confirmPassword" class="form-control" placeholder="Confirm password" required>
+          <input type="password" id="confirmPassword" name="confirmPassword" ng-model="confirmPassword" class="form-control" placeholder="Confirm password" spa-confirm-password="profile.student.password">
         </div>
 			</div>
 			<div class="submit">
