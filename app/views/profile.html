@@ -1,0 +1,55 @@
+<h1>Welcome, {{ student.fullName }}</h1>
+<div class="row">
+  <div class="col-xs-12 col-md-4">
+    <div class="profile-picture">
+      <img src="images/User-Default.jpg" class="img-responsive"/>
+    </div>
+    <a href="" class="text-center change-picture"><span class="glyphicon glyphicon-pencil"></span>Change picture</a>
+  </div>
+  <div class="col-xs-12 col-md-8">
+    <form id="editProfile" name="editProfile" ng-class="{'readonly': profile.isEdit}" class="form-horizontal">
+      <div class="form-group">
+        <span ng-show="editusername.$error.required && editusername.$dirty" class="error">Username is required.</span>
+        <label for="username" class="col-sm-4 control-label">Username</label>
+        <div class="form-values">
+          <input type="text" id="username" name="username" ng-model="student.username" class="form-control" placeholder="Username" required ng-readonly="profile.isEdit">
+        </div>
+			</div>
+			<div class="form-group">
+        <span ng-show="editfullName.$error.required && editfullName.$dirty" class="error">Full name is required.</span>
+        <label for="fullName" class="col-sm-4 control-label">Full Name</label>
+				<div class="form-values">
+          <input type="text" id="fullName" name="fullName" ng-model="student.fullName" class="form-control" placeholder="Full name" required ng-readonly="profile.isEdit">
+        </div>
+			</div>
+			<div class="form-group">
+        <span ng-show="editemail.$error.required && editemail.$dirty" class="error">Email is required.</span>
+        <span ng-show="editemail.$error.email" class="error">Invalid email address.</span>
+				<label for="email" class="col-sm-4 control-label">Email address</label>
+        <div class="form-values">
+          <input type="email" id="email" name="email" ng-model="student.email" class="form-control" placeholder="Email address" required ng-readonly="profile.isEdit">
+        </div>
+			</div>
+			<div class="form-group password hidden">
+        <span ng-show="editpassword.$error.required && editpassword.$dirty" class="error">Password is required.</span>
+				<label for="password" class="col-sm-4 control-label">Password</label>
+        <div class="form-values">
+          <input type="password" id="password" name="password" ng-model="student.password" class="form-control" placeholder="Password" required ng-readonly="profile.isEdit">
+        </div>
+			</div>
+			<div class="form-group password hidden">
+        <span ng-show="editconfirmPassword.$error.required && editconfirmPassword.$dirty && student.password.length > 0" class="error">Password does not match.</span>
+        <span ng-show="password != confirmPassword && editconfirmPassword.$dirty" class="error">Password does not match.</span>
+				<label for="confirmPassword" class="col-sm-4 control-label">Confirm Password</label>
+        <div class="form-values">
+          <input type="password" id="confirmPassword" name="confirmPassword" ng-model="confirmPassword" class="form-control" placeholder="Confirm password" required>
+        </div>
+			</div>
+			<div class="submit">
+				<button type="button" ng-hide="profile.isEdit" id="editProfile" ng-click="profile.editProfile()" class="btn btn-primary">Edit</button>
+				<button type="submit" ng-show="profile.isEdit" class="btn btn-success">Done</button>
+				<button type="button" ng-show="profile.isEdit" class="btn btn-default">Cancel</button>
+			</div>
+    </form>
+  </div>
+</div>

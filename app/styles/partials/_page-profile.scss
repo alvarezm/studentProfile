@@ -1,0 +1,74 @@
+.student-profile {
+  h1 {
+    padding-bottom: 30px;
+    text-align: center;
+    
+    @media(min-width: $screen-md-min) {
+      text-align: left;
+    }
+  }
+  
+  .profile-picture {
+    max-width: 250px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 5px solid #ccc;
+    overflow: hidden;
+  }
+  
+  .change-picture {
+    display: block;
+    margin: 10px 0 30px 0;
+    
+    .glyphicon {
+      font-size: 16px;
+      padding-right: 10px;
+    }
+  }
+  
+  form {
+    label {
+      width: 50%;
+      float: left;
+      text-align: right;
+      @media(min-width: $screen-md-min) {
+        width: 25%;
+      }
+    }
+    
+    .form-values {
+      width: 50%;
+      float: left;
+      @media(min-width: $screen-md-min) {
+        width: 75%;
+      }
+    }
+    
+    .submit {
+      text-align: center;
+      margin-top: 20px;
+      
+      @media(min-width: $screen-md-min) {
+        text-align: right;
+      }
+    }
+    
+    &.readonly {
+      .form-group {
+        margin-bottom: 5px;
+        
+        input {
+          background-color: transparent;
+          border: 0;
+          box-shadow: none;
+          padding: 0;
+          height: auto;
+        }
+        
+        label {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}

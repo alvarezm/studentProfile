@@ -1,0 +1,11 @@
+header {
+  .navbar {
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid $site-border-gray;
+    
+    .navbar-brand {
+      font-family: 'open_sans_condensedbold';
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.register {  
+  .welcome {
+    text-align: center;
+    
+    @media (min-width: $screen-md-min) {
+      text-align: left;
+    }
+  }
+  
+  .sign-up {
+    h2 {
+      font-family: 'open_sans_condensedbold';
+    }
+  }
+}

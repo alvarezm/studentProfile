@@ -8,10 +8,14 @@
  * Controller of the studentProfileApp
  */
 angular.module('studentProfileApp')
-  .controller('AboutCtrl', function () {
+  .controller('AboutCtrl', function ($scope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+    
+    $scope.getClass = function() {
+      return 'about-us';
+    };
   });

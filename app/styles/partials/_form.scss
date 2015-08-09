@@ -1,0 +1,18 @@
+.form-group {
+  .error {
+    color: $state-danger-text;
+    padding-bottom: 5px;
+    display: block;
+  }
+}
+
+.ng-invalid.ng-touched.form-control {
+  border-color: $state-danger-text;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  
+  &:focus {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483;
+  }
+}

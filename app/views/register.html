@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="col-xs-12 col-md-8 welcome">
+		<h1>Welcome to Student Profile</h1>
+		<p>A sample application using AngularJS.</p>
+	</div>
+	
+	<div class="col-xs-12 col-md-4 sign-up">
+		<h2>Sign up now</h2>
+		<form name="signUpForm" ng-submit="register.signUp()">
+			<div class="form-group">
+        <span ng-show="signUpForm.username.$error.required && signUpForm.username.$dirty" class="error">Username is required.</span>
+				<input type="text" name="username" ng-model="register.username" class="form-control" placeholder="Username" required>
+			</div>
+			<div class="form-group">
+        <span ng-show="signUpForm.fullName.$error.required && signUpForm.fullName.$dirty" class="error">Full name is required.</span>
+				<input type="text" name="fullName" ng-model="register.fullName" class="form-control" placeholder="Full name" required>
+			</div>
+			<div class="form-group">
+        <span ng-show="signUpForm.email.$error.required && signUpForm.email.$dirty" class="error">Email is required.</span>
+        <span ng-show="signUpForm.email.$error.email" class="error">Invalid email address.</span>
+				<input type="email" name="email" ng-model="register.email" class="form-control" placeholder="Email address" required>
+			</div>
+			<div class="form-group">
+        <span ng-show="signUpForm.password.$error.required && signUpForm.password.$dirty" class="error">Password is required.</span>
+				<input type="password" name="password" ng-model="register.password" class="form-control" placeholder="Password" required>
+			</div>
+			<div class="form-group">
+        <span ng-show="signUpForm.confirmPassword.$error.required && signUpForm.confirmPassword.$dirty && register.password.length > 0" class="error">Password does not match.</span>
+        <span ng-show="register.password != register.confirmPassword && signUpForm.confirmPassword.$dirty" class="error">Password does not match.</span>
+				<input type="password" name="confirmPassword" ng-model="register.confirmPassword" class="form-control" placeholder="Confirm password" required>
+			</div>
+			<div class="submit">
+				<button type="submit" class="btn btn-success">Sign up</button>
+			</div>
+		</form>
+	</div>
+</div>
