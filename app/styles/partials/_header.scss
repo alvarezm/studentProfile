@@ -2,6 +2,8 @@ header {
   .navbar {
     border-radius: 0;
     border: 0;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #ccc;
     background-color: transparent;
     position: relative;
     z-index: 1;
@@ -9,7 +11,12 @@ header {
     .navbar-brand {
       font-family: 'open_sans_condensedbold';
       color: #eee;
-      text-shadow: 1px 1px 4px #000;
+      text-shadow: 0 1px 1px #777;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+      }
     }
   }
 }

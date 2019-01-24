@@ -26,7 +26,7 @@ angular.module('studentProfileApp')
       $cookies.put('password', register.password, {'expires': expireDate});
       
       // redirect to profile page
-      $window.location.href = '#/profile';
+      $window.location.href = '/#!/profile';
     };
     
     $scope.getClass = function() {
